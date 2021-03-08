@@ -30,4 +30,9 @@ class AppLibrary:
         self._app.run()
 
     def create_user(self, username, password):
-        self._user_service.create_user(username, password)
+        try:
+            self._user_service.create_user(username, password)
+            self._io.write("New user registered")
+        except Exception as e:
+            self._io.write(str(e))
+        
