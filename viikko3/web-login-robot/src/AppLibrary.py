@@ -16,5 +16,6 @@ class AppLibrary:
             "password": password,
             "password_confirmation": password
         }
-
+    
         requests.post(f"{self._base_url}/register", data=data)
+

@@ -38,7 +38,7 @@ class UserService:
         if not username or not password:
             raise UserInputError("Username and password are required")
 
-        userre = re.compile("^[A-Za-z]{3,}$")
+        userre = re.compile("[A-Za-z]{3,}$")
         passre = re.compile("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$")
         if userre.match(username) == None:
             raise UserInputError("Username must be at least 3 characters")
