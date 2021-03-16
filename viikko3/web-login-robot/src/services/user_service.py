@@ -47,6 +47,8 @@ class UserService:
         userre = re.compile("[A-Za-z]{3,}$")
         passre = re.compile("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$")
 
+        print(userre)
+
         if len(username) < 3 or userre.match(username) == None:
             raise UserInputError("Username must be at least 3 characters")
 
