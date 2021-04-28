@@ -1,6 +1,5 @@
-from kps_pelaaja_vs_pelaaja import KPSPelaajaVsPelaaja
-from kps_tekoaly import KPSTekoaly
-from kps_parempi_tekoaly import KPSParempiTekoaly
+from kps import KPS
+from kps_tehdas import luo_peli
 
 
 def main():
@@ -15,22 +14,16 @@ def main():
         vastaus = input()
 
         if vastaus.endswith("a"):
-            peli = KPSPelaajaVsPelaaja()
-            aloita_peli(peli)
+            Kps = KPS()
+            luo_peli("PelaajaVSPelaaja")
         elif vastaus.endswith("b"):
-            peli = KPSTekoaly()
-            aloita_peli(peli)
+            Kps = KPS()
+            luo_peli("Tekoaly")
         elif vastaus.endswith("c"):
-            peli = KPSParempiTekoaly()
-            aloita_peli(peli)
+            Kps = KPS()
+            luo_peli("ParannettuTekoaly")
         else:
             break
-    
-def aloita_peli(peli):
-    print(
-        "Peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s"
-    )
-    peli.pelaa()
 
 
 
